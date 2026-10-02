@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBA 2nd Year 3rd Sem - Attendance Dashboard Documentation</title>
+<style>
+  :root {
+    --bg: #F8FAFC;
+    --card: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --border: #E2E8F0;
+    --primary: #2563EB;
+    --primary-bg: #EFF6FF;
+    --success: #16A34A;
+    --success-bg: #DCFCE7;
+    --warning: #D97706;
+    --warning-bg: #FEF3C7;
+    --danger: #DC2626;
+    --danger-bg: #FEE2E2;
+    --purple: #9333EA;
+    --purple-bg: #F3E8FF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 30px 20px;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+  .header-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  }
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-right: 8px;
+    margin-bottom: 10px;
+  }
+  .badge-blue { background: var(--primary-bg); color: var(--primary); border: 1px solid #BFDBFE; }
+  .badge-green { background: var(--success-bg); color: var(--success); border: 1px solid #BBF7D0; }
+  .badge-red { background: var(--danger-bg); color: var(--danger); border: 1px solid #FECACA; }
+  
+  h1 { font-size: 1.85rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+  h2 { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin: 24px 0 12px 0; border-bottom: 2px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin: 16px 0 8px 0; }
+  p, li { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 8px; }
+  ul, ol { padding-left: 22px; margin-bottom: 14px; }
+  
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  }
+  .alert-box {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-left: 5px solid #DC2626;
+    padding: 16px;
+    border-radius: 10px;
+    margin: 14px 0;
+  }
+  .success-box {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    border-left: 5px solid #16A34A;
+    padding: 16px;
+    border-radius: 10px;
+    margin: 14px 0;
+  }
+  .code-block {
+    background: #0F172A;
+    color: #F8FAFC;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    margin: 10px 0 16px 0;
+  }
+  code {
+    background: #F1F5F9;
+    color: #0F172A;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-family: Consolas, monospace;
+    font-size: 0.88rem;
+    border: 1px solid #E2E8F0;
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+  .stat-box {
+    background: #F8FAFC;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .stat-title { font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; }
+  .formula-box {
+    background: #F8FAFC;
+    border-left: 4px solid var(--primary);
+    padding: 14px 16px;
+    margin: 12px 0;
+    border-radius: 0 10px 10px 0;
+    font-family: Consolas, monospace;
+    font-size: 0.92rem;
+    color: #1E293B;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th { background: #F8FAFC; font-weight: 700; color: var(--text-primary); }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header-card">
+    <span class="badge badge-blue">Offline Documentation</span>
+    <span class="badge badge-green">AI Agent Specification</span>
+    <span class="badge badge-red">Vercel Fix Included</span>
+    <h1>🎓 MBA 2nd Year 3rd Sem — Attendance Portal</h1>
+    <p>Complete offline documentation, Vercel deployment error diagnosis, and technical guide for AI coding agents.</p>
+  </div>
+
+  <!-- Vercel Error Diagnosis & Fix -->
+  <div class="card">
+    <h2>🔍 Vercel Deployment Error Explained & Fixed</h2>
+    <div class="alert-box">
+      <b style="color:#DC2626;">Error Seen in Vercel Build:</b><br>
+      <code>Error: Found app.py but it does not export a top-level "app", "application", or "handler" variable.</code>
+    </div>
+    
+    <h3>Why Vercel Showed This Error:</h3>
+    <p>Vercel is designed for <b>Serverless Functions</b> (Next.js, FastAPI, Flask with <code>app = Flask()</code>). When Vercel builds a Python repository, it searches for a WSGI/ASGI application variable named <code>app</code>, <code>application</code>, or <code>handler</code>.</p>
+    <p><b>Streamlit is NOT a serverless function</b>; it is an interactive dashboard server requiring an active WebSocket connection (<code>streamlit run app.py</code>).</p>
+
+    <h3>What We Did in Code:</h3>
+    <p>We added top-level compatibility exports to <code>app.py</code>:</p>
+    <div class="code-block">def handler(request=None, response=None):
+    return "MBA 2nd Year 3rd Sem Attendance Portal"
+app = handler
+application = handler</div>
+
+    <h3>🚀 The Best Free Way to Deploy Streamlit (30 Seconds):</h3>
+    <div class="success-box">
+      <b style="color:#16A34A;">Deploy via Streamlit Community Cloud (Official Free Host):</b><br>
+      Since your code is already on GitHub at <code>kt6572017-netizen/srm_att_2yr</code>:
+      <ol style="margin-top:8px;">
+        <li>Go to <b><a href="https://share.streamlit.io" target="_blank">share.streamlit.io</a></b> and sign in with GitHub.</li>
+        <li>Click <b>New app</b>.</li>
+        <li>Select Repository: <code>kt6572017-netizen/srm_att_2yr</code>.</li>
+        <li>Main file path: <code>app.py</code>.</li>
+        <li>Click <b>Deploy!</b> — It will launch with 100% full interactive WebSocket support for free!</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Quick Execution -->
+  <div class="card">
+    <h2>⚡ How to Run Offline on Your PC</h2>
+    <p>You can run this project completely offline without an internet connection:</p>
+    <ul>
+      <li><b>1-Click Launch:</b> Double-click <code>run_dashboard.bat</code> inside your folder.</li>
+      <li><b>Command Line Launch:</b>
+        <div class="code-block">cd "C:\Users\Riya\OneDrive\Desktop\New folder\srm attandence"
+streamlit run app.py</div>
+      </li>
+      <li>The application launches locally at: <code>http://localhost:8501</code></li>
+    </ul>
+  </div>
+
+  <!-- Agent Technical Spec -->
+  <div class="card">
+    <h2>🤖 AI Agent System Specification</h2>
+    <p>Structured for external AI coding agents (ChatGPT, Claude, Cursor, Devin, Antigravity) reading this repository:</p>
+
+    <h3>1. Application Architecture</h3>
+    <ul>
+      <li><b>Entry File:</b> <code>app.py</code> (Streamlit Multi-View Framework)</li>
+      <li><b>Data Source:</b> <code>attendance.csv</code> (174 records, 29 unique students, 12 courses)</li>
+      <li><b>Original PDF:</b> <code>ATTENDANCE 290926.pdf</code></li>
+      <li><b>Visualization Engine:</b> Plotly Graph Objects (<code>go.Figure</code>) & Plotly Express</li>
+      <li><b>Conducted Classes Mapping:</b> <code>COURSE_CONDUCTED</code> dict mapping course codes to total lectures (16 for MBG24301T/2T, 24 for MBG24303L lab, 17 for others).</li>
+    </ul>
+
+    <h3>2. Dataset Schema (attendance.csv)</h3>
+    <table>
+      <thead>
+        <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>S.No</code></td><td>Integer</td><td>Sequential record identifier (1 to 174)</td></tr>
+        <tr><td><code>Register_No</code></td><td>String</td><td>Student SRM Registration Number</td></tr>
+        <tr><td><code>Student_Name</code></td><td>String</td><td>Full student name</td></tr>
+        <tr><td><code>Course_Code</code></td><td>String</td><td>Subject identification code</td></tr>
+        <tr><td><code>Course_Title</code></td><td>String</td><td>Subject title / description</td></tr>
+        <tr><td><code>Attendance_Percentage</code></td><td>Float</td><td>Recorded student attendance %</td></tr>
+        <tr><td><code>Status</code></td><td>String</td><td>Eligibility: 'Eligible' vs 'Shortage'</td></tr>
+      </tbody>
+    </table>
+
+    <h3>3. Mathematical Formulations</h3>
+    <div class="formula-box">
+      <b>Recovery Formula (&lt; 75%):</b> x = ceil( 3*T - 4*A ) upcoming consecutive classes.<br>
+      <b>Safe Miss Buffer (&ge; 75%):</b> m = floor( (4*A - 3*T) / 3 ) safe missed classes.
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
